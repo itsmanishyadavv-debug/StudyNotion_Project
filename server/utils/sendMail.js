@@ -5,20 +5,25 @@ exports.mailSender = async(email,body,heading) =>{
    try{
     const transporter = nodemailer.createTransport({
         host:"smtp.gmail.com",
+        port: 587,            
+        secure: false, 
         auth:{
             user:process.env.USER_MAIL,
             pass:process.env.PASS,
         },
     });
 
+    
     const response = await transporter.sendMail({
-        from:"StudyNotion by-Lovekush",
+        from:"StudyPulse by-Lovekush.dev",
         to:`${email}`,
         subject:`${heading}`,
         html:`${body}`
     })
-    return response;
+    return;
    }catch(e){
-     console.log(e.message);
+     console.log("this the error",e.message);
+     return;
    }
 }
+

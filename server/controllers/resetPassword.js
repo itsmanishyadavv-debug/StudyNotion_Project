@@ -22,12 +22,13 @@ exports.resetPasswordToken = async(req,res) =>{
             });
         }
 
+
         const token = crypto.randomUUID();
         const updatedDetails = await User.findOneAndUpdate({email:email},{
                                                             token:token,
                                                             resetPasswordExpired:Date.now()+5*60*1000,
         },{new:true});
-
+        
         const url = process.env.FRONTEND_URL+`/${token}`;
         // const url = "http://localhost:3000"+`/${token}`;
         await mailSender(email,` click here to go reset password page <a href=${url}>click here</a>`,"Reset Your Password By Clicking Here");
