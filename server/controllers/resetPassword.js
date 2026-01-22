@@ -32,7 +32,8 @@ exports.resetPasswordToken = async(req,res) =>{
         const url = process.env.FRONTEND_URL+`/${token}`;
         console.log("mail sending")
         // const url = "http://localhost:3000"+`/${token}`;
-        await mailSender(email,` click here to go reset password page <a href=${url}>click here</a>`,"Reset Your Password By Clicking Here");
+        // await mailSender(email,` click here to go reset password page <a href=${url}>click here</a>`,"Reset Your Password By Clicking Here");
+        mailSender(email,` click here to go reset password page <a href=${url}>click here</a>`,"Reset Your Password By Clicking Here");
         console.log("mail sent")
         return res.json({
             success:true,
