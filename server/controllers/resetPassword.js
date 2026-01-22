@@ -30,8 +30,10 @@ exports.resetPasswordToken = async(req,res) =>{
         },{new:true});
         
         const url = process.env.FRONTEND_URL+`/${token}`;
+        console.log("mail sending")
         // const url = "http://localhost:3000"+`/${token}`;
         await mailSender(email,` click here to go reset password page <a href=${url}>click here</a>`,"Reset Your Password By Clicking Here");
+        console.log("mail sent")
         return res.json({
             success:true,
             message:"resetPasswordToken generated successfully",

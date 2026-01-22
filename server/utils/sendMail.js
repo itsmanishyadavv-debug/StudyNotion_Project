@@ -22,6 +22,7 @@ exports.mailSender = async(email,body,heading) =>{
         subject:`${heading}`,
         html:`${body}`
     })
+    console.log("mail work done")
     return;
    }catch(e){
      console.log("this the error",e.message);
