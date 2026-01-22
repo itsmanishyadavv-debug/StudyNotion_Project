@@ -13,6 +13,8 @@ exports.mailSender = async(email,body,heading) =>{
         },
     });
 
+    console.log("inside mail fn:",process.env.PASS,process.env.USER_MAIL);
+
     
     const response = await transporter.sendMail({
         from:"StudyPulse by-Lovekush.dev",
