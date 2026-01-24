@@ -29,4 +29,3 @@ exports.mailSender = async(email,body,heading) =>{
      return;
    }
 }
-
