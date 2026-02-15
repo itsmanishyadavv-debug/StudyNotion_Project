@@ -140,12 +140,16 @@ export default function CourseInformationForm() {
     formData.append("courseName", data.courseTitle)
     formData.append("courseDescription", data.courseShortDesc)
     formData.append("price", data.coursePrice)
-    formData.append("tag", JSON.stringify(data.courseTags))
-    formData.append("whatYouWillLearn", data.courseBenefits)
-    formData.append("category", data.courseCategory)
+    formData.append("tag", data.courseCategory)
+    formData.append("WhatYouWillLearn", data.courseBenefits)
+    formData.append("category", data.courseTags)
     formData.append("status", COURSE_STATUS.DRAFT)
     formData.append("instructions", JSON.stringify(data.courseRequirements))
     formData.append("thumbnailImage", data.courseImage)
+    console.log("ara h jii", formData)
+    for (let [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
     setLoading(true)
     const result = await addCourseDetails(formData, token)
     if (result) {

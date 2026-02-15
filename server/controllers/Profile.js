@@ -134,18 +134,19 @@ exports.updateProfilePic = async(req,res) =>{
 exports.getEnrolledCourse = async(req,res) =>{
     try{
         const userId = req.user.id;
-        const courses = User.findById({_id:userId},{courses:true}).populate("courses");
+        // console.log("hello i am inside enrolled course------------------------------------------------------------------------------------------------",userId)
+        const courses = await User.findById({_id:userId},{new:true}).populate("courses").exec();
         if(!courses){
             return res.json({
                 success:false,
                 message:"No course found",
             });
         }
-        console.log("hello i am inside enrolled course",courses.courses)
+        // console.log("hello i am inside enrolled course",courses)
         return res.json({
             success:true,
             message:"course found successfully",
-            data:courses.courses,
+            data:courses,
         }); 
     }catch(e){
         return res.json({

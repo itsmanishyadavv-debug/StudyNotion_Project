@@ -15,7 +15,8 @@ exports.uploadCourse = async(req,res) =>{
             tag,
         } = req.body;
         const thumbnail = req.files.thumbnailImage;
-        
+
+        // console.log("yahn tk aa rha h",courseName,courseDescription,WhatYouWillLearn,price,tag,thumbnail);
         if(!courseName || !courseDescription || !WhatYouWillLearn || !price || !tag || !thumbnail){
             return res.json({
                 success:false,
@@ -39,7 +40,8 @@ exports.uploadCourse = async(req,res) =>{
             });
         }
         // console.log(tagDetails);
-        console.log(tag);
+        // console.log(tag);
+        // console.log("tagDetails",tagDetails);
 
         const cloudinaryUpload = await uploadToCloudinary(thumbnail,process.env.FOLDER_NAME);
         
@@ -79,9 +81,9 @@ exports.uploadCourse = async(req,res) =>{
 }
 
 
-exports.getAllCourses = (req,res) =>{
+exports.getAllCourses = async(req,res) =>{
     try{
-        const courses = find({},{
+        const courses = await Course.find({},{
             courseName:true,
             courseDescription:true,
             WhatYouWillLearn:true,
@@ -91,7 +93,7 @@ exports.getAllCourses = (req,res) =>{
             ratingAndReviews:true,
         }).populate("Instructor").exec();
         return res.json({
-            success:false,
+            success:true,
             message:"Course found",
             Data:courses,
         });

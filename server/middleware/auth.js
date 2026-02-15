@@ -6,6 +6,7 @@ exports.auth = async(req,res,next) =>{
     try{
 
         console.log("token in cookie:",req.cookies)
+        // console.log("i am inside auth middleware------------------------------------------------------------------------------------------------")
 
         const token = req.body.token || req.cookies.token || req.headers.authorization?.split(" ")[1];
         console.log(token)

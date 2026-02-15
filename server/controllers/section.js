@@ -12,6 +12,7 @@ exports.createSection = async(req,res) =>{
                 message:"All fields are required",
             });
         }
+        // console.log("1---------------------------------------");
         const createdSection = await Section.create({sectionName});
         const upadatedCourse = await Course.findByIdAndUpdate({_id:courseId},{
                                                                 $push:{
@@ -23,6 +24,7 @@ exports.createSection = async(req,res) =>{
         return res.json({
             success:true,
             message:"section created succesfully",
+            updatedCourse:upadatedCourse,
         });
    }catch(e){
     return res.json({

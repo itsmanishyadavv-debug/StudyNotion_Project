@@ -141,6 +141,7 @@ export const createSection = async (data, token) => {
       throw new Error("Could Not Create Section")
     }
     toast.success("Course Section Created")
+    // console.log("response?.data?.updatedCourse", response)
     result = response?.data?.updatedCourse
   } catch (error) {
     console.log("CREATE SECTION API ERROR............", error)
@@ -154,6 +155,7 @@ export const createSection = async (data, token) => {
 export const createSubSection = async (data, token) => {
   let result = null
   const toastId = toast.loading("Loading...")
+  console.log("data", data)
   try {
     const response = await apiConnector("POST", CREATE_SUBSECTION_API, data, {
       Authorization: `Bearer ${token}`,
@@ -272,12 +274,13 @@ export const fetchInstructorCourses = async (token) => {
         Authorization: `Bearer ${token}`,
       }
     )
-    console.log("INSTRUCTOR COURSES API RESPONSE............", response)
+    console.log("INSTRUCTOR COURSES API RESPONSE............",GET_ALL_INSTRUCTOR_COURSES_API, response)
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch Instructor Courses")
     }
-    if(response?.data?.data?.length > 0){
-      result = response?.data?.data
+    console.log("response?.data?.data?.courses", response)
+    if(response?.data?.data?.courses?.length > 0){
+      result = response?.data?.data?.courses
     }
   } catch (error) {
     console.log("INSTRUCTOR COURSES API ERROR............", error)
