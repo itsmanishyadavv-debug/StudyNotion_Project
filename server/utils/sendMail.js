@@ -17,7 +17,7 @@ exports.mailSender = async(email,body,heading) =>{
 
     
     const response = await transporter.sendMail({
-        from:"StudyPulse by-Lovekush.dev",
+        from:"StudyPulse by-Manish.dev",
         to:`${email}`,
         subject:`${heading}`,
         html:`${body}`

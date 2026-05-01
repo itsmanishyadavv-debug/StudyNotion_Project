@@ -55,7 +55,7 @@ studypulse/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Lovekush-1509/studyPulse.git
+git clone https://github.com/Manish-1509/studyPulse.git
 cd studyPulse
 ```
 
@@ -101,7 +101,7 @@ Backend:  http://localhost:4000
 
 
 ## 🐞 Bug Reporting
-If you find any bugs, please **email me** at **lovekush2022ucb6052@gmail.com** with the subject:  
+If you find any bugs, please **email me** at **manish2022ucb6052@gmail.com** with the subject:  
 `studypulse bug found`
 
-**Made with ❤️ by [Lovekush](https://www.linkedin.com/in/lovekush-84514b26a/)**
+**Made with ❤️ by [Manish](https://www.linkedin.com/in/manish-84514b26a/)**

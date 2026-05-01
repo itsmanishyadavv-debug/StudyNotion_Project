@@ -8,6 +8,7 @@ exports.dbConnect = () =>{
     }).then(() =>{console.log("DATABASE connected successfully")})
    . catch((e) =>{
         console.log("DATABASE not connected");
+        console.error(e);
         process.exit(1);
     })
 }

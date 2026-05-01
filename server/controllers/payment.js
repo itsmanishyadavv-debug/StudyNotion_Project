@@ -105,7 +105,7 @@ exports.verifySignature = async(req,res) =>{
 
         const mailResponse = await sendMail(userCourse.email,
                                             "Thanks for selecting our course",
-                                            "By lovekush"
+                                            "By Manish"
         );
         return res.json({
             success:true,

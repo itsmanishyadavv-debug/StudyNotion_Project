@@ -4,6 +4,7 @@ import { BsChevronDown } from "react-icons/bs"
 import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
+import { FaGraduationCap } from "react-icons/fa"
 import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { NavbarLinks } from "../../data/navbar-links"
 import { apiConnector } from "../../services/apiConnector"
@@ -68,8 +69,11 @@ function Navbar() {
     >
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
-        <Link to="/">
-          <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
+        <Link to="/" className="flex items-center gap-2">
+          <FaGraduationCap className="text-2xl text-yellow-50" />
+          <div className="text-2xl font-bold text-richblack-25">
+            StudyPulse
+          </div>
         </Link>
         {/* Navigation links */}
         <nav className="hidden md:block">

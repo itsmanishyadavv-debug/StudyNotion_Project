@@ -23,7 +23,7 @@ const OTPSchema = mongoose.Schema({
 
 async function mailer(email,otp){
     try{
-        const mailSend = mailSender(email,otpTemplate(otp),"OTP Verification | StudyNotion by-Lovekush");
+        const mailSend = mailSender(email,otpTemplate(otp),"OTP Verification | StudyNotion by-Manish");
         return mailSend;
     }catch(e){
         console.log("Error occured during sending Mail",e.message);
