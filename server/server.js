@@ -18,9 +18,9 @@ cloudinaryConnect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:[process.env.FRONTEND_URL,"http://localhost:3000",
-        "studypulse-git-main-fortesting1509-gmailcoms-projects.vercel.app",
-        "studypulse-cibpg8tfy-fortesting1509-gmailcoms-projects.vercel.app"],
+    origin: (origin, callback) => {
+        callback(null, true);
+    },
     credentials:true,
 }));
 app.use(fileUpload({
