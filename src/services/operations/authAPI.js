@@ -33,7 +33,9 @@ export function sendOtp(email, navigate) {
         throw new Error(response.data.message)
       }
 
-      toast.success("OTP Sent Successfully")
+      // Show the OTP directly on the screen for the user!
+      const generatedOtp = response.data.OTPVal?.otp;
+      toast.success(`Your OTP is: ${generatedOtp}`, { duration: 10000 })
       navigate("/verify-email")
     } catch (error) {
       console.log("SENDOTP API ERROR............", error.message)
