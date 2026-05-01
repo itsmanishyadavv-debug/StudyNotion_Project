@@ -101,7 +101,7 @@ Backend:  http://localhost:4000
 
 
 ## 🐞 Bug Reporting
-If you find any bugs, please **email me** at **manish2022ucb6052@gmail.com** with the subject:  
+If you find any bugs, please **email me** at **my474421@gmail.com** with the subject:  
 `studypulse bug found`
 
-**Made with ❤️ by [Manish](https://www.linkedin.com/in/manish-84514b26a/)**
+**Made with ❤️ by [Manish](https://www.linkedin.com/in/manish-yadav-22731725a/)**
