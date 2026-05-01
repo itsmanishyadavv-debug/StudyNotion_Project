@@ -113,7 +113,7 @@ exports.getAllRating = async(req,res) =>{
         }
         return res.json({
             success:true,
-            courseRating:courseRating,
+            data:courseRating,
         });
     }catch(e){
         return res.json({
